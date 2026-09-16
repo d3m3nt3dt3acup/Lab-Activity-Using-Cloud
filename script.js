@@ -1,3 +1,12 @@
+// Theme
+function applySavedTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+  }
+}
+applySavedTheme();
+
 // Say Hello
 const welcomeBtn = document.getElementById("welcomeBtn");
 const welcomeMessage = document.getElementById("welcomeMessage");
@@ -61,7 +70,7 @@ if (welcomeBtn && helloModal) {
   });
 }
 
-//About Me
+// About Me
 const readMoreBtn = document.getElementById("readMoreBtn");
 const moreText = document.getElementById("moreText");
 
@@ -75,18 +84,26 @@ if (readMoreBtn && moreText) {
 // Change theme
 const themeBtn = document.getElementById("themeBtn");
 
+function updateThemeBtnLabel() {
+  if (!themeBtn) return;
+  const darkModeEnabled = document.body.classList.contains("dark-theme");
+  themeBtn.textContent = darkModeEnabled
+    ? "☀️ Light Theme"
+    : "🌙 Change Theme";
+}
+updateThemeBtnLabel();
+
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
     const darkModeEnabled = document.body.classList.contains("dark-theme");
-    themeBtn.textContent = darkModeEnabled
-      ? "☀️ Light Theme"
-      : "🌙 Change Theme";
+    localStorage.setItem("theme", darkModeEnabled ? "dark" : "light");
+    updateThemeBtnLabel();
   });
 }
 
-// Date and time
+// Current date and time
 function updateDateTime() {
   const now = new Date();
 
