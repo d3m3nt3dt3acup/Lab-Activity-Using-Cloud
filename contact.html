@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Ira Jasper Fuentesfina</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">Ira Jasper<span>.</span></a>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html#about">About Me</a>
+        <a href="about.html#skills">Skills</a>
+        <a href="about.html#hobbies">Hobbies</a>
+        <a href="about.html#gallery">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contact" class="section contact-section">
+      <div class="section-heading">
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2>Contact</h2>
+      </div>
+      <form id="contactForm" class="contact-form">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+        <p id="formStatus" class="form-status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Current Date &amp; Time:</p>
+    <p id="dateTime"></p>
+    <p class="copyright">© <span id="year"></span> Ira Jasper Fuentesfina</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
